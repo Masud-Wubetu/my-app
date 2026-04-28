@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import ReactMarkdown from 'react-markdown';
 import { FaArrowUp } from "react-icons/fa";
 import { Button } from './ui/button'
 import { useRef, useState } from 'react';
@@ -49,7 +50,9 @@ const ChatBot = () => {
                 message.role === 'user' 
                 ? 'bg-blue-600 text-white self-end'
                 : 'bg-gray-100 text-black self-start'
-            }`}>{message.content}</p>)}
+            }`}>
+                <ReactMarkdown>{message.content}</ReactMarkdown>
+            </p>)}
         </div>
         <form
             onSubmit={handleSubmit(onSubmit)}
