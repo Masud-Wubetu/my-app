@@ -13,7 +13,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [isBotTyping, setIsBotTyping] = useState(false);
   const [error, setError] = useState("");
-  const conversationId = useRef(crypto.randomUUID);
+  const conversationId = useRef(crypto.randomUUID());
 
   const onSubmit = async ({ prompt }: ChatFormData) => {
     try {
